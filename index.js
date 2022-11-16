@@ -20,6 +20,9 @@ const connectDB = async (DATABASE_URL) => {
 connectDB(DB);
 app.use(cookieParser());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Welcome to video share app");
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/video", videoRouter);
